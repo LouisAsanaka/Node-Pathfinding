@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pathfinding.controller.GraphEditorController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#newFile" text="New">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+              <MenuItem mnemonicParsing="false" onAction="#openFile" text="Open">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#saveFile" text="Save">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#clearGraph" text="Clear" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#openHelp" text="About">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane fx:id="graphCanvasPane" onKeyReleased="#changeMode" onMouseClicked="#primaryButton" onMouseMoved="#mouseMove" style="-fx-background-color: #484848;" />
+            <Label fx:id="interactionMode" alignment="CENTER_RIGHT" style="-fx-background-color: #3b3b3b; -fx-background-insets: 0, 1; -fx-padding: 6px; -fx-background-radius: 10px;" text="View Mode" textFill="WHITE" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets right="40.0" top="30.0" />
+               </StackPane.margin>
+               <font>
+                  <Font name="Segoe UI Light" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="costLabel" alignment="CENTER_RIGHT" layoutX="444.0" layoutY="40.0" style="-fx-background-color: #3b3b3b; -fx-background-insets: 0, 1; -fx-padding: 6px; -fx-background-radius: 10px;" text="Cost: " textFill="WHITE" visible="false" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font name="Segoe UI Light" size="24.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets left="40.0" top="30.0" />
+               </StackPane.margin>
+            </Label>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>
