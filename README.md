@@ -1,6 +1,6 @@
 # Node-Pathfinding
 
-Simple node graph editor with 3 pathfinding algorithms (Uniform Cost, Greedy, A*).
+Simple node graph editor with 3 pathfinding algorithms (Uniform Cost, Greedy, A*). Code is not very organized, so browse at your own risk.
 
 Features
 --------
